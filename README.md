@@ -8,13 +8,19 @@ to use markdown as document.
 
 then start write document in markdown format!
 
+### Credit
+
+This project based on the design idea of [Strapdown.js](https://strapdownjs.com/). 
+but use [casual-markdown](https://github.com/casualwriter/casual-markdown) parser, 
+build-in css, vanilla javascript without any dependence. (support all browsers include IE9) 
+
 ### Sample
 
 * Introduction of Casual-Markdown-Doc. src: [sample.html](source/sample.html) => [preview](https://raw.githack.com/casualwriter/casual-markdown-doc/main/source/sample.html) 
 * Supported Markpreviewdown Syntax https://casualwriter.github.io/casual-markdown/casual-markdown-syntax.html
 
 
-### Usage Guide
+## Usage Guide
 
 1. create your document in html format. e.g. `casual-markdown-syntax.html` 
 2. use below first 4 line as header, and start draft content in markdown format
