@@ -56,7 +56,7 @@ content in markdown format
 
 ### How it works
 
-The main program is very simple by doing the following steps. (in 15 lines).
+The main program is very simple by doing the following steps. 
 
 1. read markdown content from ``<body>``
 1. update document title 
@@ -74,13 +74,10 @@ window.onload = function () {
   html += '\n<div id=tocbox><button style="float:right" onclick="this.parentElement.style.display=\'none\'">'
   html += 'X</button><div id="toc"></div></div>' 
   html += '\n<div id=content>' + md.html(document.body.innerHTML.replace(/\&gt;/g,'>')) + '</div></div>'; 
-
-  // add shortcut for edit current page.
-  html += '<a href=# onclick="tocToggle()" accesskey=t style="display:none">TOC</a>';
-  html += '<a href=# onclick="debug()" accesskey=x style="display:none">HTML</a>';
-  
+    
   document.body.innerHTML = html
   document.body.style.display = 'block';
+  
   md.toc( 'content', 'toc', { scrollspy:'body' } )
   
 }
