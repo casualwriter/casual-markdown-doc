@@ -17,7 +17,7 @@ build-in css, vanilla javascript without any dependence. (support all browsers i
 ### Sample
 
 * Introduction of Casual-Markdown-Doc. src: [sample.html](source/sample.html) => [preview](https://raw.githack.com/casualwriter/casual-markdown-doc/main/source/sample.html) 
-* Supported Markpreviewdown Syntax https://casualwriter.github.io/casual-markdown/casual-markdown-syntax.html
+* Supported Markdown Syntax https://casualwriter.github.io/casual-markdown/casual-markdown-syntax.html
 
 
 ## Usage Guide
