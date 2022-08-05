@@ -1,10 +1,10 @@
 ## Casual-Markdown-Doc
 
 [Casual-Markdown-Doc](https://github.com/casualwriter/casual-markdown-doc) provide a quick solution 
-to use markdown as document.
+to use markdown as html document, and publish by web or share by file. 
 
-* include javascript lib `casual-markdown-doc.js`
-* include css style `casual-markdown-doc.css`
+* include javascript lib [casual-markdown-doc.js](source/casual-markdown-doc.js)
+* include css style [casual-markdown-doc.css](source/casual-markdown-doc.css)
 
 then start write document in markdown format!
 
@@ -23,12 +23,13 @@ build-in css, vanilla javascript without any dependence. (support all browsers i
 ## Usage Guide
 
 1. create your document in html format. e.g. `casual-markdown-syntax.html` 
-2. use below first 4 line as header, and start draft content in markdown format
-3. at line 4, revise title to your document title
+2. use below first 5 line as header, and start draft content in markdown format
+3. at line 5, revise title to your document title
 4. start draft document in markdown format
 
 ~~~
 <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link  href="https://casualwriter.github.io/dist/casual-markdown-doc.css" rel="stylesheet">
 <script src="https://casualwriter.github.io/dist/casual-markdown-doc.js"></script>
 <body title="Supported Syntax of Casual-Markdown">
@@ -40,6 +41,7 @@ or include `casual-markdown-doc.js` from local
 
 ~~~
 <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link  href="casual-markdown-doc.css" rel="stylesheet">
 <script src="casual-markdown-doc.js"></script>
 <body title="Supported Syntax of Casual-Markdown">
@@ -53,6 +55,24 @@ content in markdown format
 * hotkey [alt-t] to toggle table-of-content popup-box
 * hotkey [ctrl-p] to print document, table-of-content will be inserted as first page automatically.
 * if donot want table-of-content printout. please close TOC box first, then print document.
+* table-of-content will be hidden if screen width less than 1024 (e.g. mobile).
+
+### Themes
+
+The following themes are available, by adding ``class="theme-name"`` in body tag. 
+They are pre-defined in `casual-markdown-doc.css` (sorry not good at UI design, set your style if you like) 
+
+~~~
+/* ==== theme for casual-markdown-doc.css ==== */
+.dark, .dark div, .dark pre, .dark code { background:#383838!important; color:#ccc } 
+.dark h2, .dark h3, .dark h4, .dark a { color:white } .dark header{ background:#888 } .dark .active {color:pink}
+.ukraine  header { background: linear-gradient(to bottom right, #0057b8, #ffd700); }
+.skygreen header { background: linear-gradient(to bottom, skyblue, green); }
+.skyblue  header { background: skyblue; }
+.coffee header { background:#6F4E37 }  .coffee .toc h3, .coffee .toc .active { color:#6F4E37 }
+.purple header { background:Purple }  .purple .toc h3, .purple .active { color:Purple }
+.pink   header { background:MediumVioletRed } .pink .toc h3, .pink .active { color:teal }
+~~~
 
 ### How it works
 
@@ -87,4 +107,5 @@ window.onload = function () {
 ### Modification History
 
 * 2022/07/22, v0.70, initial release.
+* 2022/08/06, v0.80, support themes, cater mobile, and some minor fix.
  

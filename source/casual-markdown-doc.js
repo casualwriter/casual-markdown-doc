@@ -40,10 +40,10 @@
   
   //===== parse markdown string into HTML string (exclude code-block)
   md.parser = function( mdstr ) {
+
     // apply yaml variables
-    console.log( 'BEFORE==>', mdstr.substr(0,100) )
     for (var name in this.yaml) mdstr = mdstr.replace( new RegExp('\{\{\\s*'+name+'\\s*\}\}', 'gm'), this.yaml[name] )
-    console.log( 'AFTER==>', mdstr.substr(0,100) )
+
     // table syntax
     mdstr = mdstr.replace(/\n(.+?)\n.*?\-\-\|\-\-.*?\n([\s\S]*?)\n\s*?\n/g, function (m,p1,p2) {
         var thead = p1.replace(/^\|(.+)/gm,'$1').replace(/(.+)\|$/gm,'$1').replace(/\|/g,'<th>')
@@ -189,7 +189,7 @@
 }).call( function(){ return this||(typeof window!=='undefined'?window:global)}() );
 
 //=============================================================================
-// 20220719, convert markdown-document in <body> tag into HTML document
+// 20220805, convert markdown-document in <body> tag into HTML document
 //=============================================================================
 window.onload = function () {
 
@@ -197,9 +197,10 @@ window.onload = function () {
   html += '<header id=heading>' + (document.body.title||document.title) + '</header>'
   html += '\n<div id=tocbox><button style="float:right" onclick="this.parentElement.style.display=\'none\'">'
   html += 'X</button><div id="toc"></div></div>' 
-  html += '\n<div id=content>' + md.html(document.body.innerHTML.replace(/\&gt;/g,'>')) + '</div></div>'; 
+  md.text = document.body.innerHTML.replace(/^\n/,'').replace(/\&gt;/g,'>')
+  html += '\n<div id=content>' + md.html( md.text ) + '</div></div>'; 
 
-  // add shortcut for edit current page.
+  // add shortcut for toc/debug.
   html += '<a href=# onclick="tocToggle()" accesskey=t style="display:none">TOC</a>';
   html += '<a href=# onclick="debug()" accesskey=x style="display:none">HTML</a>';
   
